@@ -1,0 +1,60 @@
+{
+  "evidence_type": "facet_rerank_diagnostic_no_generation",
+  "facets": [
+    "Nhân viên Senior có 9 năm thâm niên được hưởng bao nhiêu ngày phép năm?",
+    "Mức lương của nhân viên Senior thường nằm trong khoảng nào?"
+  ],
+  "planner_status": "llm",
+  "rankings": [
+    {
+      "facet": "Nhân viên Senior có 9 năm thâm niên được hưởng bao nhiêu ngày phép năm?",
+      "ranked": [
+        {
+          "source": "nghi_phep_nam_v2024.md",
+          "score": 0.990146815776825
+        },
+        {
+          "source": "nghi_phep_khong_luong.md",
+          "score": 0.3334045112133026
+        },
+        {
+          "source": "nghi_phep_dac_biet.md",
+          "score": 0.08786509186029434
+        },
+        {
+          "source": "nghi_om.md",
+          "score": 0.054585717618465424
+        },
+        {
+          "source": "bang_luong_2024.md",
+          "score": 0.005354344379156828
+        }
+      ]
+    },
+    {
+      "facet": "Mức lương của nhân viên Senior thường nằm trong khoảng nào?",
+      "ranked": [
+        {
+          "source": "bang_luong_2024.md",
+          "score": 0.2980651557445526
+        },
+        {
+          "source": "nghi_om.md",
+          "score": 0.0016485300147905946
+        },
+        {
+          "source": "nghi_phep_nam_v2024.md",
+          "score": 0.0007536828052252531
+        },
+        {
+          "source": "nghi_phep_khong_luong.md",
+          "score": 0.0003714955528266728
+        },
+        {
+          "source": "nghi_phep_dac_biet.md",
+          "score": 0.00020606163889169693
+        }
+      ]
+    }
+  ]
+}

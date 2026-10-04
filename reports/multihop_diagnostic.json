@@ -1,0 +1,194 @@
+{
+  "evidence_type": "fresh_readonly_retrieval_diagnostic_no_answer_generation",
+  "query": "Một nhân viên Senior có 9 năm thâm niên được nghỉ bao nhiêu ngày phép năm và lương trong khoảng nào?",
+  "input_fingerprint": "0197e5ff7c23312f417c6959ed32b7050f42c400b252f60efdd3b3af5b8eebf0",
+  "candidate_count": 16,
+  "fused_candidates": [
+    {
+      "source": "nghi_phep_nam_v2024.md",
+      "chunk_id": "3812b144df6eb732b691:parent:0:child:1",
+      "rrf_score": 0.03278688524590164
+    },
+    {
+      "source": "nghi_phep_khong_luong.md",
+      "chunk_id": "b14fa4e734d837bebede:parent:0:child:1",
+      "rrf_score": 0.03128054740957967
+    },
+    {
+      "source": "nghi_phep_dac_biet.md",
+      "chunk_id": "a0e9d5889466a00f79d7:parent:0:child:0",
+      "rrf_score": 0.03076923076923077
+    },
+    {
+      "source": "nghi_phep_nam_v2024.md",
+      "chunk_id": "3812b144df6eb732b691:parent:0:child:0",
+      "rrf_score": 0.03055037313432836
+    },
+    {
+      "source": "nghi_om.md",
+      "chunk_id": "a35e2bf02828f1feee1e:parent:0:child:1",
+      "rrf_score": 0.029857397504456328
+    },
+    {
+      "source": "nghi_phep_khong_luong.md",
+      "chunk_id": "b14fa4e734d837bebede:parent:0:child:0",
+      "rrf_score": 0.029418126757516764
+    },
+    {
+      "source": "nghi_phep_nam_v2024.md",
+      "chunk_id": "3812b144df6eb732b691:parent:0:child:2",
+      "rrf_score": 0.027984344422700584
+    },
+    {
+      "source": "nghi_om.md",
+      "chunk_id": "a35e2bf02828f1feee1e:parent:0:child:2",
+      "rrf_score": 0.027783137179239824
+    },
+    {
+      "source": "thu_viec.md",
+      "chunk_id": "8a5318ede651487e66f4:parent:0:child:2",
+      "rrf_score": 0.027598020555767037
+    },
+    {
+      "source": "nghi_phep_khong_luong.md",
+      "chunk_id": "b14fa4e734d837bebede:parent:0:child:2",
+      "rrf_score": 0.027272727272727275
+    },
+    {
+      "source": "bang_luong_2024.md",
+      "chunk_id": "646df10dc051b0f5e3c6:parent:0:child:1",
+      "rrf_score": 0.02638888888888889
+    },
+    {
+      "source": "hoan_chi_dao_tao.md",
+      "chunk_id": "bb1a8a73f02384675553:parent:0:child:0",
+      "rrf_score": 0.014705882352941176
+    },
+    {
+      "source": "mentor_buddy.md",
+      "chunk_id": "c875933abe6935e0efda:parent:0:child:2",
+      "rrf_score": 0.013888888888888888
+    },
+    {
+      "source": "nghi_phep_dac_biet.md",
+      "chunk_id": "a0e9d5889466a00f79d7:parent:0:child:3",
+      "rrf_score": 0.013333333333333334
+    },
+    {
+      "source": "nghi_phep_dac_biet.md",
+      "chunk_id": "a0e9d5889466a00f79d7:parent:0:child:1",
+      "rrf_score": 0.013333333333333334
+    },
+    {
+      "source": "nghi_phep_dac_biet.md",
+      "chunk_id": "a0e9d5889466a00f79d7:parent:0:child:2",
+      "rrf_score": 0.013157894736842105
+    }
+  ],
+  "reranked": [
+    {
+      "source": "nghi_phep_nam_v2024.md",
+      "chunk_id": "3812b144df6eb732b691:parent:0:child:1",
+      "rerank_score": 0.9632910490036011
+    },
+    {
+      "source": "nghi_phep_nam_v2024.md",
+      "chunk_id": "3812b144df6eb732b691:parent:0:child:0",
+      "rerank_score": 0.364298939704895
+    },
+    {
+      "source": "nghi_phep_khong_luong.md",
+      "chunk_id": "b14fa4e734d837bebede:parent:0:child:0",
+      "rerank_score": 0.2583484947681427
+    },
+    {
+      "source": "nghi_phep_khong_luong.md",
+      "chunk_id": "b14fa4e734d837bebede:parent:0:child:1",
+      "rerank_score": 0.253630667924881
+    },
+    {
+      "source": "nghi_phep_khong_luong.md",
+      "chunk_id": "b14fa4e734d837bebede:parent:0:child:2",
+      "rerank_score": 0.10832387953996658
+    },
+    {
+      "source": "nghi_om.md",
+      "chunk_id": "a35e2bf02828f1feee1e:parent:0:child:1",
+      "rerank_score": 0.10361380130052567
+    },
+    {
+      "source": "nghi_phep_nam_v2024.md",
+      "chunk_id": "3812b144df6eb732b691:parent:0:child:2",
+      "rerank_score": 0.0964990109205246
+    },
+    {
+      "source": "nghi_om.md",
+      "chunk_id": "a35e2bf02828f1feee1e:parent:0:child:2",
+      "rerank_score": 0.02436339668929577
+    },
+    {
+      "source": "nghi_phep_dac_biet.md",
+      "chunk_id": "a0e9d5889466a00f79d7:parent:0:child:0",
+      "rerank_score": 0.018835434690117836
+    },
+    {
+      "source": "nghi_phep_dac_biet.md",
+      "chunk_id": "a0e9d5889466a00f79d7:parent:0:child:1",
+      "rerank_score": 0.011894268915057182
+    },
+    {
+      "source": "nghi_phep_dac_biet.md",
+      "chunk_id": "a0e9d5889466a00f79d7:parent:0:child:2",
+      "rerank_score": 0.0104790348559618
+    },
+    {
+      "source": "bang_luong_2024.md",
+      "chunk_id": "646df10dc051b0f5e3c6:parent:0:child:1",
+      "rerank_score": 0.0038248689379543066
+    },
+    {
+      "source": "thu_viec.md",
+      "chunk_id": "8a5318ede651487e66f4:parent:0:child:2",
+      "rerank_score": 0.0031220661476254463
+    },
+    {
+      "source": "nghi_phep_dac_biet.md",
+      "chunk_id": "a0e9d5889466a00f79d7:parent:0:child:3",
+      "rerank_score": 0.0010936721228063107
+    },
+    {
+      "source": "hoan_chi_dao_tao.md",
+      "chunk_id": "bb1a8a73f02384675553:parent:0:child:0",
+      "rerank_score": 0.0005140829016454518
+    },
+    {
+      "source": "mentor_buddy.md",
+      "chunk_id": "c875933abe6935e0efda:parent:0:child:2",
+      "rerank_score": 0.0003850218199659139
+    }
+  ],
+  "selected_parent_sources": [
+    {
+      "source": "nghi_phep_nam_v2024.md",
+      "parent_id": "3812b144df6eb732b691:parent:0",
+      "chunk_id": "3812b144df6eb732b691:parent:0:child:1",
+      "version": "2.0",
+      "effective_date": "2024-01-01"
+    },
+    {
+      "source": "nghi_phep_khong_luong.md",
+      "parent_id": "b14fa4e734d837bebede:parent:0",
+      "chunk_id": "b14fa4e734d837bebede:parent:0:child:0",
+      "version": "1.2",
+      "effective_date": "2023-07-01"
+    },
+    {
+      "source": "nghi_om.md",
+      "parent_id": "a35e2bf02828f1feee1e:parent:0",
+      "chunk_id": "a35e2bf02828f1feee1e:parent:0:child:1",
+      "version": "1.0",
+      "effective_date": "2024-01-01"
+    }
+  ],
+  "selected_contexts_match_original_run": true
+}

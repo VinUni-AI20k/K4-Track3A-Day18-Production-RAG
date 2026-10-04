@@ -1,0 +1,66 @@
+{
+  "aggregate": {
+    "faithfulness": 1.0,
+    "answer_relevancy": 0.9802007853429169,
+    "context_precision": 0.9999999999,
+    "context_recall": 1.0
+  },
+  "num_questions": 1,
+  "failures": [
+    {
+      "question": "Nhân viên được nghỉ bao nhiêu ngày khi kết hôn?",
+      "answer": "Nhân viên được nghỉ 3 ngày làm việc có lương khi kết hôn.",
+      "contexts": [
+        "Khi kết hôn, nhân viên được nghỉ 3 ngày làm việc có lương, không trừ phép năm."
+      ],
+      "ground_truth": "Nhân viên được nghỉ 3 ngày làm việc có lương khi kết hôn, không trừ vào phép năm.",
+      "score": 0.9950501963107292,
+      "metrics": {
+        "faithfulness": 1.0,
+        "answer_relevancy": 0.9802007853429169,
+        "context_precision": 0.9999999999,
+        "context_recall": 1.0
+      },
+      "worst_metric": "answer_relevancy",
+      "diagnosis": "Answer có thể lệch yêu cầu hoặc thiếu phần hỏi.",
+      "suggested_fix": "Kiểm tra câu hỏi nhiều ý và hướng dẫn trả lời trực tiếp.",
+      "error_tree": "Answer sai → Context đúng? → Kiểm tra answer có trả lời đủ ý hỏi.",
+      "diagnosis_status": "metric_based_hypothesis_requires_context_review"
+    }
+  ],
+  "per_question": [
+    {
+      "question": "Nhân viên được nghỉ bao nhiêu ngày khi kết hôn?",
+      "answer": "Nhân viên được nghỉ 3 ngày làm việc có lương khi kết hôn.",
+      "contexts": [
+        "Khi kết hôn, nhân viên được nghỉ 3 ngày làm việc có lương, không trừ phép năm."
+      ],
+      "ground_truth": "Nhân viên được nghỉ 3 ngày làm việc có lương khi kết hôn, không trừ vào phép năm.",
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9802007853429169,
+      "context_precision": 0.9999999999,
+      "context_recall": 1.0
+    }
+  ],
+  "eval_status": "complete",
+  "metric_counts": {
+    "faithfulness": 1,
+    "answer_relevancy": 1,
+    "context_precision": 1,
+    "context_recall": 1
+  },
+  "evaluation_config": {
+    "judge_model": "gpt-5.6-luna",
+    "embedding_backend": "local",
+    "embedding_model": "BAAI/bge-m3",
+    "ragas_version": "0.1.22",
+    "answer_relevancy_strictness": 3
+  },
+  "errors": [],
+  "run_metadata": {
+    "run_type": "one_question_evaluator_smoke",
+    "answer_mode": "hand_written_smoke_fixture",
+    "num_questions": 1
+  },
+  "created_at_utc": "2026-10-04T05:14:01.504737+00:00"
+}

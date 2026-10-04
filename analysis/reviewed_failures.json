@@ -1,0 +1,45 @@
+{
+  "input_fingerprint": "b94fe8011fd7276864946ee49ee4a2881ea724ec4a65285d1b84f72dd9551c6d",
+  "reviews": {
+    "17": {
+      "evidence": "tam_ung.md quy định thanh toán trong 15 ngày; sau đó tính phí 2%/tháng trên số tiền chưa hoàn ứng và khấu trừ vào lương. Nguồn không quy định prorate theo 5 ngày.",
+      "diagnosis": "Answer nêu đúng mức phí tháng và nói rõ không xác định được phí theo ngày. Điểm Answer Relevancy thấp có thể do không chốt một con số theo golden; đây là khác biệt giữa dữ kiện nguồn và giả định pro-rata trong câu trả lời mẫu.",
+      "error_tree": "Answer thiếu 50.000? → Context có 2%/tháng? Có → Context có công thức theo ngày? Không → Không gán lỗi retrieval khi policy thiếu công thức.",
+      "fix": "Giữ câu trả lời có điều kiện; nếu sản phẩm cần prorate, xác nhận owner chính sách và ghi rõ giả định tháng 30 ngày trước khi tính.",
+      "question": "Nhân viên tạm ứng 15 triệu, sau 20 ngày mới thanh toán. Bị phạt bao nhiêu?",
+      "answer": "Theo **tam_ung.md**, phí quá hạn là:\n\n**15.000.000 × 2%/tháng = 300.000 VNĐ/tháng**\n\nKhoản này bị khấu trừ vào lương tháng kế tiếp. Chính sách không quy định cách tính phí theo riêng **5 ngày quá hạn**, nên không xác định được mức phí chính xác theo ngày."
+    },
+    "8": {
+      "evidence": "mat_khau_v2.md ghi bắt buộc MFA cho email, VPN và hệ thống nội bộ. Golden còn nêu v1.0 không yêu cầu MFA; v1 bị filter vì query hỏi chính sách hiện hành.",
+      "diagnosis": "Context đủ quy định hiện hành nhưng thiếu mệnh đề lịch sử mà golden yêu cầu. Recall 0,5 phù hợp khác biệt phạm vi current-policy/lịch sử; chưa có trace Recall của lượt v2 để quy kết chính xác. Relevancy thấp cũng cần kiểm tra trace, không kết luận answer sai.",
+      "error_tree": "Recall thấp → Context có MFA hiện hành? Có → Golden yêu cầu cả bản cũ? Có → Context không có v1 → Phân biệt coverage lịch sử và correctness hiện hành.",
+      "fix": "Giữ filter hiện hành; nếu người dùng hỏi so sánh, lấy cả hai bản và gắn nhãn hết hiệu lực. Đánh giá câu lịch sử riêng, không thêm policy cũ vào câu hiện hành chỉ để tăng điểm.",
+      "question": "Có cần kích hoạt xác thực đa yếu tố (MFA) không?",
+      "answer": "Có. Tất cả nhân viên bắt buộc kích hoạt MFA cho tài khoản email, VPN và các hệ thống nội bộ. Phương thức được chấp nhận: ứng dụng Authenticator, SMS OTP hoặc YubiKey.  \n**Nguồn:** `mat_khau_v2.md`"
+    },
+    "13": {
+      "evidence": "mua_sam.md quy định 5–50 triệu cần Director, trên 10 triệu cần ít nhất 3 báo giá, và thiết bị CNTT cần xác nhận cấu hình từ phòng CNTT. Answer nêu đủ ba điều.",
+      "diagnosis": "Faithfulness thấp dù nội dung có trong source; có thể do phép áp ngưỡng 30 triệu và citation bị tách statement. Cần trace NLI để phân biệt judge variance với claim không được hỗ trợ.",
+      "error_tree": "Faithfulness thấp → Ba quy định có trong context? Có → Số 30 triệu là premise câu hỏi → Kiểm tra statement decomposition và source label.",
+      "fix": "Giữ phép áp ngưỡng nhưng đánh dấu số tiền là premise người hỏi; lưu trace judge và dùng source framing chung đã sửa.",
+      "question": "Nếu cần mua một chiếc laptop 30 triệu cho nhân viên mới, ai phê duyệt và cần gì từ phòng CNTT?",
+      "answer": "- **Người phê duyệt:** Giám đốc phòng ban (Director), vì đơn hàng **30.000.000 VNĐ** thuộc mức từ 5–50 triệu VNĐ.  \n- **Từ phòng CNTT:** Cần **xác nhận cấu hình kỹ thuật trước khi đề xuất mua sắm**.  \n- Vì đơn hàng trên **10.000.000 VNĐ**, cần đính kèm **ít nhất 3 báo giá**.\n\n*Nguồn: `mua_sam.md`*"
+    },
+    "5": {
+      "evidence": "nghi_phep_nam_v2024.md ghi từ 3 năm được cộng 1 ngày cho mỗi 3 năm liên tục. Golden còn yêu cầu quy tắc 5 năm của v2023, không nằm trong context hiện hành.",
+      "diagnosis": "Answer đúng quy tắc hiện hành; thiếu historical coverage so với golden. Recall 0,5 phù hợp việc không lấy v2023 sau version filter; không có trace Recall để xác định đóng góp từng statement.",
+      "error_tree": "Recall thấp → Context có quy tắc 3 năm? Có → Golden thêm 5 năm bản cũ? Có → Query không hỏi lịch sử → Kiểm tra phạm vi đánh giá trước khi thay version filter.",
+      "fix": "Đánh giá version comparison riêng và giữ nhãn nguồn cũ khi query yêu cầu. Không bỏ filter hoặc thay golden để tối ưu điểm hiện hành.",
+      "question": "Thâm niên bao nhiêu năm thì được cộng thêm ngày phép?",
+      "answer": "Từ **3 năm thâm niên trở lên**, nhân viên được cộng thêm **1 ngày phép cho mỗi 3 năm làm việc liên tục**.  \nNguồn: **nghi_phep_nam_v2024.md**"
+    },
+    "18": {
+      "evidence": "thu_viec.md quy định lương thử việc bằng 85% lương cấp bậc; bang_luong_2024.md cung cấp Senior/Junior và mức cao nhất của Junior. Answer tính 20.000.000 × 85% = 17.000.000 VNĐ/tháng.",
+      "diagnosis": "Answer tính đúng 17 triệu với hai nguồn cần thiết; parent hoàn chi là nhiễu không liên quan. Tuy nhiên context phụ ở cuối không tự giải thích RAGAS average precision 0,5: judge có thể đánh giá thiếu tính hữu ích của nguồn tỷ lệ 85% hoặc phép kết hợp. Chưa có verdict Precision v2 để xác định chính xác.",
+      "error_tree": "Precision thấp → Có cả 85% và mức Junior? Có → Có parent phụ không liên quan? Có → Kiểm tra verdict hữu ích/thứ tự từng parent trước khi quy kết riêng top-k.",
+      "fix": "Lưu trace context-precision cho từng source; thử thứ tự/cutoff context và bộ câu nhiều nguồn mới. Giảm parent nhiễu có ích nhưng không bảo đảm score này tăng.",
+      "question": "Lương thử việc của nhân viên Junior mức cao nhất là bao nhiêu?",
+      "answer": "Lương thử việc Junior mức cao nhất:\n\n**20.000.000 × 85% = 17.000.000 VNĐ/tháng**\n\nTheo **[Nguồn: bang_luong_2024.md]** và **[Nguồn: thu_viec.md]**."
+    }
+  }
+}

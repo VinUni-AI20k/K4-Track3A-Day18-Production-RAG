@@ -1,0 +1,9 @@
+{
+  "backend": "qdrant_server",
+  "model": "BAAI/bge-m3",
+  "dimension": 1024,
+  "top_source": "leave_smoke.md",
+  "score": 0.8429358,
+  "seconds_including_model_load": 22.396,
+  "status": "passed"
+}

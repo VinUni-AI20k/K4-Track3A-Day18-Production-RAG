@@ -1,0 +1,62 @@
+{
+  "model": "BAAI/bge-reranker-v2-m3",
+  "device": "cpu",
+  "python": "3.11.7",
+  "query": "Nhân viên được nghỉ phép bao nhiêu ngày?",
+  "candidate_method": "BM25 with corpus fill if needed",
+  "candidate_count": 20,
+  "top_k": 3,
+  "model_load_ms": 5607.6,
+  "first_inference_ms": 4361.08,
+  "warm_runs": 5,
+  "warm_latency_ms": {
+    "avg_ms": 4377.421019999383,
+    "min_ms": 4338.404599999194,
+    "max_ms": 4436.633499999516
+  },
+  "results": [
+    {
+      "text": "# Chính sách nghỉ phép năm (Phiên bản 2024)\n> Phiên bản: 2.0 | Ngày hiệu lực: 01/01/2024 | Phòng ban: Nhân sự\n\n## Số ngày phép năm\nMỗi nhân viên chính thức được hưởng **15 ngày phép năm** có lương, tăng từ 12 ngày so với chính sách năm 2023. Chính sách này",
+      "original_score": 6.574707547591989,
+      "rerank_score": 0.9839921593666077,
+      "metadata": {
+        "source": "nghi_phep_nam_v2024.md",
+        "strategy": "hierarchical",
+        "chunk_type": "child",
+        "parent_id": "3812b144df6eb732b691:parent:0",
+        "chunk_index": 0,
+        "chunk_id": "3812b144df6eb732b691:parent:0:child:0"
+      },
+      "rank": 0
+    },
+    {
+      "text": "# Chính sách nghỉ phép năm (Phiên bản 2023)\n> Phiên bản: 1.0 | Ngày hiệu lực: 01/01/2023 | Phòng ban: Nhân sự\n\n## Số ngày phép năm\nMỗi nhân viên chính thức được hưởng **12 ngày phép năm** có lương. Số ngày phép được tính theo năm dương lịch từ 01/01 đến",
+      "original_score": 6.957905088761788,
+      "rerank_score": 0.9806756377220154,
+      "metadata": {
+        "source": "nghi_phep_nam_v2023.md",
+        "strategy": "hierarchical",
+        "chunk_type": "child",
+        "parent_id": "543a196183ca388c1b3a:parent:0",
+        "chunk_index": 0,
+        "chunk_id": "543a196183ca388c1b3a:parent:0:child:0"
+      },
+      "rank": 1
+    },
+    {
+      "text": "đốc Nhân sự. Nghỉ từ 16-30 ngày: cần phê duyệt của **Giám đốc điều hành (CEO)**.\n\n## Ảnh hưởng đến phúc lợi\nTrong thời gian nghỉ không lương, nhân viên không được hưởng lương và các khoản phụ cấp. Bảo hiểm y tế vẫn được duy trì nếu nghỉ dưới 14 ngày. Nghỉ",
+      "original_score": 5.233158924216545,
+      "rerank_score": 0.9084925651550293,
+      "metadata": {
+        "source": "nghi_phep_khong_luong.md",
+        "strategy": "hierarchical",
+        "chunk_type": "child",
+        "parent_id": "b14fa4e734d837bebede:parent:0",
+        "chunk_index": 2,
+        "chunk_id": "b14fa4e734d837bebede:parent:0:child:2"
+      },
+      "rank": 2
+    }
+  ],
+  "note": "Retrieval-only smoke, not answer accuracy or RAGAS evaluation."
+}

@@ -1,0 +1,38 @@
+{
+  "evidence_type": "parent_rerank_diagnostic_no_generation",
+  "query": "Một nhân viên Senior có 9 năm thâm niên được nghỉ bao nhiêu ngày phép năm và lương trong khoảng nào?",
+  "ranked": [
+    {
+      "source": "nghi_phep_nam_v2024.md",
+      "score": 0.9862603545188904
+    },
+    {
+      "source": "nghi_phep_khong_luong.md",
+      "score": 0.5963320732116699
+    },
+    {
+      "source": "nghi_phep_dac_biet.md",
+      "score": 0.17051686346530914
+    },
+    {
+      "source": "nghi_om.md",
+      "score": 0.05073253810405731
+    },
+    {
+      "source": "bang_luong_2024.md",
+      "score": 0.023990506306290627
+    },
+    {
+      "source": "thu_viec.md",
+      "score": 0.02102186530828476
+    },
+    {
+      "source": "mentor_buddy.md",
+      "score": 0.005069617182016373
+    },
+    {
+      "source": "hoan_chi_dao_tao.md",
+      "score": 0.004346317611634731
+    }
+  ]
+}

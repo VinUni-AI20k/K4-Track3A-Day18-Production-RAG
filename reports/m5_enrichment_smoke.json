@@ -1,0 +1,25 @@
+{
+  "evidence_type": "live_api_handwritten_fixture_not_benchmark",
+  "model": "gpt-5.6-luna",
+  "elapsed_ms": 16816.81979999996,
+  "original_text": "Nhân viên chính thức được nghỉ phép năm 15 ngày làm việc mỗi năm.",
+  "enriched_text": "Đoạn văn đề cập đến chính sách nghỉ phép năm của nhân viên chính thức.\n\nNhân viên chính thức được nghỉ phép năm 15 ngày làm việc mỗi năm.\n\nNhân viên chính thức được nghỉ phép năm 15 ngày làm việc mỗi năm.\n\nNhân viên chính thức được nghỉ phép bao nhiêu ngày mỗi năm?\nLoại phép nào được đề cập trong đoạn văn?\nĐối tượng nào được hưởng 15 ngày nghỉ phép mỗi năm?",
+  "summary": "Nhân viên chính thức được nghỉ phép năm 15 ngày làm việc mỗi năm.",
+  "questions": [
+    "Nhân viên chính thức được nghỉ phép bao nhiêu ngày mỗi năm?",
+    "Loại phép nào được đề cập trong đoạn văn?",
+    "Đối tượng nào được hưởng 15 ngày nghỉ phép mỗi năm?"
+  ],
+  "metadata": {
+    "topic": "Nghỉ phép năm",
+    "entities": [
+      "nhân viên chính thức",
+      "15 ngày làm việc mỗi năm"
+    ],
+    "category": "Chính sách nhân sự",
+    "language": "vi",
+    "source": "m5-smoke-fixture",
+    "parent_id": "smoke-p1",
+    "enrichment_status": "llm"
+  }
+}

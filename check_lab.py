@@ -62,7 +62,7 @@ def run_tests() -> tuple[int, int]:
         import re
         result = subprocess.run(
             [sys.executable, "-m", "pytest", "tests/", "-v", "--tb=no", "-q"],
-            capture_output=True, text=True, timeout=120, encoding="utf-8", errors="replace"
+            capture_output=True, text=True, timeout=300, encoding="utf-8", errors="replace"
         )
         lines = result.stdout.strip().split("\n")
         summary = lines[-1] if lines else ""
@@ -70,11 +70,24 @@ def run_tests() -> tuple[int, int]:
         m_fail = re.search(r"(\d+)\s+failed", summary)
         passed = int(m_pass.group(1)) if m_pass else 0
         failed = int(m_fail.group(1)) if m_fail else 0
-        total = passed + failed
+        m_error = re.search(r"(\d+)\s+errors?", summary)
+        collection_errors = int(m_error.group(1)) if m_error else 0
+        total = passed + failed + collection_errors
+        if result.returncode and total == passed:
+            total += 1
         return passed, total
     except Exception as e:
         print(f"  ⚠️  pytest error: {e}")
         return 0, 0
+
+
+def check_production_report():
+    from main import reusable_production_report
+    if reusable_production_report() is None:
+        print("  ❌ Report phải đủ scores thật, generation thành công và đúng fingerprint hiện tại")
+        return False
+    print("  ✅ Production report: đủ scores, dữ liệu và fingerprint hợp lệ")
+    return True
 
 
 def validate():
@@ -93,13 +106,16 @@ def validate():
     if check_file("reports/ragas_report.json"):
         if not check_json("reports/ragas_report.json", ["aggregate", "num_questions"]):
             errors += 1
+        elif not check_production_report():
+            errors += 1
     else:
         errors += 1
     check_file("reports/naive_baseline_report.json", required=False)
 
     # 3. Analysis
     print("\n📝 Analysis:")
-    check_file("analysis/failure_analysis.md")
+    if not check_file("analysis/failure_analysis.md"):
+        errors += 1
 
     # 4. Individual reflections
     print("\n👤 Individual reflections:")
@@ -117,6 +133,7 @@ def validate():
             print(f"  ✅ {r}")
     else:
         print(f"  ⚠️  Chưa có file reflection cá nhân (đặt tại {ref_dir}/reflection_[HọTên].md hoặc analysis/reflection_[HọTên].md)")
+        errors += 1
 
     # 5. TODO count
     print("\n🔧 TODO markers:")
@@ -125,6 +142,7 @@ def validate():
         print("  ✅ Không còn TODO nào")
     else:
         print(f"  ⚠️  Còn {todo_count} TODO chưa implement")
+        errors += 1
 
     # 6. Tests
     print("\n🧪 Auto-tests:")
@@ -134,6 +152,8 @@ def validate():
         print(f"  {'✅' if pct >= 80 else '⚠️'} {passed}/{total} tests passed ({pct:.0f}%)")
     else:
         print("  ⚠️  Không chạy được tests")
+    if total == 0 or passed != total:
+        errors += 1
 
     # 7. Summary
     print("\n" + "=" * 50)
@@ -142,7 +162,8 @@ def validate():
     else:
         print(f"❌ Có {errors} lỗi. Sửa trước khi nộp.")
     print("=" * 50)
+    return errors
 
 
 if __name__ == "__main__":
-    validate()
+    sys.exit(1 if validate() else 0)
